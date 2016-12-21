@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroNet", "MicroNet\MicroNet.csproj", "{23520512-C19A-4985-9BCC-73935C6020E9}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MicroNetCore", "MicroNetCore\MicroNetCore.xproj", "{A964A7F0-A61D-41DA-9CB3-BB3EAA7DFFFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{23520512-C19A-4985-9BCC-73935C6020E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23520512-C19A-4985-9BCC-73935C6020E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23520512-C19A-4985-9BCC-73935C6020E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A964A7F0-A61D-41DA-9CB3-BB3EAA7DFFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A964A7F0-A61D-41DA-9CB3-BB3EAA7DFFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A964A7F0-A61D-41DA-9CB3-BB3EAA7DFFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A964A7F0-A61D-41DA-9CB3-BB3EAA7DFFFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
