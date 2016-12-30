@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\DataTableToModelHelper.cs" />
+    <Compile Include="Common\GuidHelper.cs" />
+    <Compile Include="Common\StringHelper.cs" />
     <Compile Include="Logging\EventId.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\LogLevel.cs" />
