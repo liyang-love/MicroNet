@@ -22,33 +22,33 @@ namespace Test
             Logger.SetLogLevel = LogLevel.All;
             //Logger.SetLogLevel = LogLevel.SQL;
 
-            Logger.LogDebug("Trace", "错误信息");
-            Logger.LogDebug("Trace", even, "错误信息");
-            Logger.LogDebug("Trace", even, ex, "错误信息");
+            Logger.LogDebug("Trace",new[] { "错误信息" } );
+            Logger.LogDebug("Trace", even,new[] { "错误信息" });
+            Logger.LogDebug("Trace", even, ex,new[] { "错误信息" });
 
-            Logger.LogInformation("Trace", "错误信息");
-            Logger.LogInformation("Trace", even, "错误信息");
-            Logger.LogInformation("Trace", even, ex, "错误信息");
+            Logger.LogInformation("Trace",new[] { "错误信息" });
+            Logger.LogInformation("Trace", even,new[] { "错误信息" });
+            Logger.LogInformation("Trace", even, ex,new[] { "错误信息" });
 
-            Logger.LogSQL("Trace", "错误信息");
-            Logger.LogSQL("Trace", even, "错误信息");
-            Logger.LogSQL("Trace", even, ex, "错误信息");
+            Logger.LogSQL("Trace",new[] { "错误信息" });
+            Logger.LogSQL("Trace", even,new[] { "错误信息" });
+            Logger.LogSQL("Trace", even, ex,new[] { "错误信息" });
 
-            Logger.LogTrace("Trace", "错误信息");
-            Logger.LogTrace("Trace", even, "错误信息");
-            Logger.LogTrace("Trace", even, ex, "错误信息");
+            Logger.LogTrace("Trace",new[] { "错误信息" });
+            Logger.LogTrace("Trace", even,new[] { "错误信息" });
+            Logger.LogTrace("Trace", even, ex,new[] { "错误信息" });
 
-            Logger.LogWarning("Trace", "错误信息");
-            Logger.LogWarning("Trace", even, "错误信息");
-            Logger.LogWarning("Trace", even, ex, "错误信息");
+            Logger.LogWarning("Trace",new[] { "错误信息" });
+            Logger.LogWarning("Trace", even,new[] { "错误信息" });
+            Logger.LogWarning("Trace", even, ex,new[] { "错误信息" });
 
-            Logger.LogError("Trace", "错误信息");
-            Logger.LogError("Trace", even, "错误信息");
-            Logger.LogError("Trace", even, ex, "错误信息");
+            Logger.LogError("Trace",new[] { "错误信息" });
+            Logger.LogError("Trace", even,new[] { "错误信息" });
+            Logger.LogError("Trace", even, ex,new[] { "错误信息" });
 
-            Logger.LogCritical("Trace", "错误信息");
-            Logger.LogCritical("Trace", even, "错误信息");
-            Logger.LogCritical("Trace", even, ex, "错误信息");
+            Logger.LogCritical("Trace",new[] { "错误信息" });
+            Logger.LogCritical("Trace", even,new[] { "错误信息" });
+            Logger.LogCritical("Trace", even, ex,new[] { "错误信息" });
 
             //Logger.LogSql("错误", "debug");
             Console.ReadKey();

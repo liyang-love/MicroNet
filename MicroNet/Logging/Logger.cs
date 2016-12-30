@@ -52,10 +52,10 @@ namespace MicroNet.Logging
         /// <param name="args"></param>
         public static void LogDebug(
                 string category,
+                object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Debug))
             {
@@ -72,14 +72,14 @@ namespace MicroNet.Logging
         public static void LogDebug(
                 string category,
                 EventId eventId,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Debug))
             {
-                string info = string.Format(" 事件:{0} 其他信息:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n {1}", eventId.ToString(), string.Join(",", args));
                 WriteFile(LogLevel.Debug, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -95,14 +95,14 @@ namespace MicroNet.Logging
                 string category,
                 EventId eventId,
                 Exception exception,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Debug))
             {
-                string info = string.Format("{0} \r\n 异常信息:{1} \r\n其他信息:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
                 WriteFile(LogLevel.Debug, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -114,14 +114,14 @@ namespace MicroNet.Logging
         /// <param name="args">记录信息</param>
         public static void LogInformation(
                 string category,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Information))
             {
-                WriteFile(LogLevel.Information, category, string.Join(",", args), memberName, sourceFilePath, sourceLineNumber);
+                WriteFile(logLevel: LogLevel.Information, category: category, content: string.Join(",", args), memberName: memberName, sourceFilePath: sourceFilePath, sourceLineNumber: sourceLineNumber);
             }
         }
 
@@ -134,14 +134,14 @@ namespace MicroNet.Logging
         public static void LogInformation(
                 string category,
                 EventId eventId,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Information))
             {
-                string info = string.Format("{0} \r\n其他信息:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
                 WriteFile(LogLevel.Information, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -157,14 +157,14 @@ namespace MicroNet.Logging
                 string category,
                 EventId eventId,
                 Exception exception,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Information))
             {
-                string info = string.Format("{0} \r\n 异常信息:{1} \r\n其他信息:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
                 WriteFile(LogLevel.Information, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -176,9 +176,10 @@ namespace MicroNet.Logging
         /// <param name="args"></param>
         public static void LogSQL(
                 string category,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0, params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.SQL))
             {
@@ -195,14 +196,14 @@ namespace MicroNet.Logging
         public static void LogSQL(
                 string category,
                 EventId eventId,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.SQL))
             {
-                string info = string.Format("{0} \r\n其他信息:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
                 WriteFile(LogLevel.SQL, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -218,14 +219,14 @@ namespace MicroNet.Logging
                 string category,
                 EventId eventId,
                 Exception exception,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.SQL))
             {
-                string info = string.Format("{0} \r\n 异常信息:{1} \r\n其他信息:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
                 WriteFile(LogLevel.SQL, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -237,10 +238,10 @@ namespace MicroNet.Logging
         /// <param name="args"></param>
         public static void LogTrace(
                 string category,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Trace))
             {
@@ -257,14 +258,14 @@ namespace MicroNet.Logging
         public static void LogTrace(
                 string category,
                 EventId eventId,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Trace))
             {
-                string info = string.Format("{0} \r\n其他信息:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
                 WriteFile(LogLevel.Trace, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -280,14 +281,14 @@ namespace MicroNet.Logging
                 string category,
                 EventId eventId,
                 Exception exception,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Trace))
             {
-                string info = string.Format("{0} \r\n 异常信息:{1} \r\n其他信息:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
                 WriteFile(LogLevel.Trace, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -299,10 +300,10 @@ namespace MicroNet.Logging
         /// <param name="args"></param>
         public static void LogWarning(
                 string category,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Warning))
             {
@@ -319,14 +320,14 @@ namespace MicroNet.Logging
         public static void LogWarning(
                 string category,
                 EventId eventId,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Warning))
             {
-                string info = string.Format("{0} \r\n其他信息:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
                 WriteFile(LogLevel.Warning, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -342,14 +343,14 @@ namespace MicroNet.Logging
                 string category,
                 EventId eventId,
                 Exception exception,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Warning))
             {
-                string info = string.Format("{0} \r\n 异常信息:{1} \r\n其他信息:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
                 WriteFile(LogLevel.Warning, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -361,10 +362,10 @@ namespace MicroNet.Logging
         /// <param name="args">记录信息</param>
         public static void LogError(
                 string category,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Error))
             {
@@ -381,14 +382,14 @@ namespace MicroNet.Logging
         public static void LogError(
                 string category,
                 EventId eventId,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Error))
             {
-                string info = string.Format("{0} \r\n其他信息:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
                 WriteFile(LogLevel.Error, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -404,14 +405,14 @@ namespace MicroNet.Logging
                 string category,
                 EventId eventId,
                 Exception exception,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Error))
             {
-                string info = string.Format("{0} \r\n 异常信息:{1} \r\n其他信息:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
                 WriteFile(LogLevel.Error, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -423,10 +424,10 @@ namespace MicroNet.Logging
         /// <param name="args"></param>
         public static void LogCritical(
                 string category,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Critical))
             {
@@ -443,14 +444,14 @@ namespace MicroNet.Logging
         public static void LogCritical(
                 string category,
                 EventId eventId,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Critical))
             {
-                string info = string.Format("{0} \r\n其他信息:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
                 WriteFile(LogLevel.Critical, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -466,14 +467,14 @@ namespace MicroNet.Logging
                 string category,
                 EventId eventId,
                 Exception exception,
+                 object[] args,
                 [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
                 [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0,
-                params object[] args)
+                [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
             if (IsEnabled(LogLevel.Critical))
             {
-                string info = string.Format("{0} \r\n 异常信息:{1} \r\n其他信息:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
                 WriteFile(LogLevel.Critical, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -492,7 +493,7 @@ namespace MicroNet.Logging
                 }
                 using (FileStream fs = new FileStream(path, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
                 {
-                    string info = string.Format("[{0}]-【{1}】-[{2}]:\r\n 方法名:{3} \r\n 源文件地址:{4} \r\n 代码行数:{5}　\r\n {6}　　\r\n",
+                    string info = string.Format("[{0}]-【{1}】-[{2}]:\r\n Function:{3} \r\n SourceFile:{4} ,CodeLine:{5}　\r\n 日志:{6}　　\r\n\r\n",
                                                DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"),
                                                logLevel.ToString(),
                                                category,

@@ -5,14 +5,26 @@ using System.Text;
 
 namespace MicroNet.Logging
 {
-    public struct EventId
+    public class EventId
     {
+        public EventId()
+        {
+
+        }
+
+        public EventId(int id, string name)
+        {
+            this.Id = id;
+            this.Name = name;
+        }
+
+
         public int Id { get; set; }
         public string Name { get; set; }
 
         public override string ToString()
         {
-            return string.Format(" Id:{0} Name:{1} ", this.Id, this.Name);
+            return string.Format(" EventId:{0} EventName:{1}", this.Id, this.Name);
         }
     }
 }
