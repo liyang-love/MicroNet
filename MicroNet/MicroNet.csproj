@@ -55,6 +55,7 @@
     <Compile Include="Common\GuidHelper.cs" />
     <Compile Include="Common\JsonHelper.cs" />
     <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="ConfigHelper\ConfigManageHelper.cs" />
     <Compile Include="Logging\EventId.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\LogLevel.cs" />
