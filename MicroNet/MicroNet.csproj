@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,6 +44,13 @@
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\LogLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLHelpers\EnumDBType.cs" />
+    <Compile Include="SQLHelpers\ISQLHelper.cs" />
+    <Compile Include="SQLHelpers\MySQLHelper.cs" />
+    <Compile Include="SQLHelpers\OracleHelper.cs" />
+    <Compile Include="SQLHelpers\SQLHelper.cs" />
+    <Compile Include="SQLHelpers\SQLHelperException.cs" />
+    <Compile Include="SQLHelpers\SQLServerHelper.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
