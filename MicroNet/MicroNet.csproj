@@ -54,6 +54,7 @@
     <Compile Include="Common\DesHelper.cs" />
     <Compile Include="Common\GuidHelper.cs" />
     <Compile Include="Common\JsonHelper.cs" />
+    <Compile Include="Common\SnowflakeHelper.cs" />
     <Compile Include="Common\StringHelper.cs" />
     <Compile Include="ConfigHelper\ConfigManageHelper.cs" />
     <Compile Include="Logging\EventId.cs" />
