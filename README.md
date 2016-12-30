@@ -32,4 +32,8 @@
             var model = db.Instance.GetData<Advice>("select * from tablename");
             
 <span>
-
+<h3>3、MicroNet.Common<h3>
+<h5>该名称空间下为常用的基本函数类库</h5>
+<h5>3.1、DataTableToModelHelper:DataTable转成List,使用更加高效的EMIT方法生成.数据库字段的名称必须和实体的名称对应,并且区分英文大小写</h5>
+<h5>3.2、GuidHelper：GUID常用的帮助类</h5>
+<h5>3.3、StringHelper：字符串或对象帮助类</h5>
