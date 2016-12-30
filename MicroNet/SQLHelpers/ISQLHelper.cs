@@ -29,7 +29,7 @@ namespace MicroNet.SQLHelpers
         DataTable GetData(string sql);
 
         /// <summary>
-        /// 查询数据返回dateTable
+        /// 查询数据返回dateTable,使用参数化进行传参
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
@@ -43,7 +43,7 @@ namespace MicroNet.SQLHelpers
         List<T> GetData<T>(string sql);
 
         /// <summary>
-        /// 查询数据返回对象
+        /// 查询数据返回对象,使用参数化进行传参
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
@@ -71,38 +71,46 @@ namespace MicroNet.SQLHelpers
         int ExecuteNoQuery(List<string> sql);
 
         /// <summary>
-        /// 执行增删改 
+        /// 执行增删改 ,使用参数化进行传参
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
         int ExecuteNoQuery(string sql, IDbDataParameter[] para);
 
         /// <summary>
-        /// 执行存储过程 
+        /// 执行存储过程 ,使用参数化进行传参并且不返回任何参数
         /// </summary>
         /// <param name="storeName"></param>
         /// <returns></returns>
         void ExecuteStore(string storeName, IDbDataParameter[] para);
 
         /// <summary>
-        /// 执行存储过程 
+        /// 执行存储过程，不返回任何参数 
         /// </summary>
         /// <param name="storeName"></param>
         /// <returns></returns>
         void ExecuteStore(string storeName);
 
         /// <summary>
-        /// 执行存储过程 
+        /// 执行存储过程 ,使用参数化进行传参并且返回DataTable
         /// </summary>
         /// <param name="storeName"></param>
         /// <returns></returns>
         DataTable ExecuteStor(string storeName, IDbDataParameter[] para);
 
         /// <summary>
-        /// 执行存储过程 
+        /// 执行存储过程 ,使用参数化进行传参并且返回实体
         /// </summary>
         /// <param name="storeName"></param>
         /// <returns></returns>
         List<T> ExecuteStor<T>(string storeName, IDbDataParameter[] para);
+
+        /// <summary>
+        /// 执行存储过程获取带有Out的参数
+        /// </summary>
+        /// <param name="storeName"></param>
+        /// <param name="para"></param>
+        /// <returns></returns>
+        object ExecuteStorToOut(string storeName, string outParametersName, IDbDataParameter[] para);
     }
 }

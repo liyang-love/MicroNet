@@ -246,5 +246,20 @@ namespace MicroNet.SQLHelpers
                 return DataTableToModelHelper.DataTableToList<T>(ds.Tables[0]);
             }
         }
+
+        public object ExecuteStorToOut(string storeName, string outParametersName, IDbDataParameter[] para)
+        {
+            using (MySqlConnection conn = new MySqlConnection(ConnectionString))
+            {
+                MySqlCommand cmd = new MySqlCommand(storeName, conn);
+                var pa = (MySqlParameter[])para;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(pa);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return cmd.Parameters[outParametersName].Value;
+            }
+        }
     }
 }

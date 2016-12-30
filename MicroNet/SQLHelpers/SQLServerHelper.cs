@@ -254,5 +254,20 @@ namespace MicroNet.SQLHelpers
                 return DataTableToModelHelper.DataTableToList<T>(ds.Tables[0]);
             }
         }
+
+        public object ExecuteStorToOut(string storeName, string outParametersName, IDbDataParameter[] para)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(storeName, conn);
+                var pa = (SqlParameter[])para;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(pa);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return cmd.Parameters[outParametersName].Value;
+            }
+        }
     }
 }
