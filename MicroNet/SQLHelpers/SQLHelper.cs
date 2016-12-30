@@ -10,7 +10,7 @@ namespace MicroNet.SQLHelpers
     /// <summary>
     /// SQLHelper帮助类
     /// </summary>
-    public class SQLHelper
+    public sealed class SQLHelper
     {
         /// <summary>
         /// 数据库类型
