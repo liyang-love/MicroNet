@@ -49,12 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheHelper\SessionHandler.cs" />
     <Compile Include="Common\AesHelper.cs" />
+    <Compile Include="Common\CacheHelper.cs" />
     <Compile Include="Common\DataTableToModelHelper.cs" />
     <Compile Include="Common\DesHelper.cs" />
+    <Compile Include="Common\EnumHelper.cs" />
+    <Compile Include="Common\GPSHelper.cs" />
     <Compile Include="Common\GuidHelper.cs" />
     <Compile Include="Common\JsonHelper.cs" />
+    <Compile Include="Common\LoadBalancingHelper.cs" />
     <Compile Include="Common\SnowflakeHelper.cs" />
+    <Compile Include="Common\Snowflakebak.cs" />
     <Compile Include="Common\StringHelper.cs" />
     <Compile Include="ConfigHelper\ConfigManageHelper.cs" />
     <Compile Include="Logging\EventId.cs" />
@@ -73,6 +79,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
