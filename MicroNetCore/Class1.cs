@@ -9,7 +9,7 @@ namespace MicroNetCore
     {
         public Class1()
         {
-            Console.WriteLine("ss");
+        
         }
     }
 }
