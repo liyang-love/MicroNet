@@ -9,7 +9,8 @@ namespace MicroNetCore
     {
         public Class1()
         {
-        
+            //dddd
+            Console.Write("d");
         }
     }
 }
