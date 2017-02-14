@@ -11,7 +11,7 @@ namespace MicroNet.CacheHelper
         /// <summary>
         /// 缓存更新线程
         /// </summary>
-        Thread SessionThread;
+        Thread SessionThread; 
 
         /// <summary>
         /// 最后更新时间
