@@ -142,9 +142,9 @@ namespace Test
         static void SQLTest()
         {
             SQLHelper db = new SQLHelper("Constr");
-            var data = db.Instance.GetData("select * from 医嘱_医生医嘱表");
+            var data = db.Instance.GetData("select * from sys.tables");
 
-            var model = db.Instance.GetData<Advice>("select * from 医嘱_医生医嘱表");
+            var model = db.Instance.GetData<Advice>("select name,object_id from sys.tables");
 
             OracleParameter[] OracleParameters = {
                         new OracleParameter("p_BQID", OracleDbType.Varchar2,200,"8001",ParameterDirection.Input),
