@@ -52,7 +52,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CacheHelper\SessionHandlerTests.cs" />
+    <Compile Include="Common\AesHelperTests.cs" />
     <Compile Include="Common\SnowflakeHelperTests.cs" />
+    <Compile Include="ConfigHelper\ConfigManageHelperTests.cs" />
     <Compile Include="Logging\LoggerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLHelpers\SQLHelperTests.cs" />
