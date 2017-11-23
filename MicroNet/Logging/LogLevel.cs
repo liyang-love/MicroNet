@@ -10,48 +10,49 @@ namespace MicroNet.Logging
     /// </summary>
     public enum LogLevel
     {
-        //
-        // 摘要:
-        // 不记录任何信息
+        /// <summary>
+        /// 摘要: 不记录任何信息
+        /// </summary>
         None = 0,
-        //
-        // 摘要:
-        // 记录所有信息
+
+        /// <summary>
+        /// 摘要:记录所有信息
+        /// </summary>
         All = 1,
 
-        //
-        // 摘要:
-        // 调试跟踪。
+        /// <summary>
+        /// 摘要:调试跟踪。 
+        /// </summary>
         Debug = 2,
 
-        //
-        // 摘要:
-        //     信息性消息。
+        /// <summary>
+        /// 摘要:信息性消息。
+        /// </summary>
         Information = 4,
 
-        //
-        // 摘要:
-        //     记录SQL语句。
+        /// <summary>
+        ///  摘要:记录SQL语句。
+        /// </summary>
         SQL = 8,
 
-        //
-        // 摘要:
-        //关于可能影响设备功能的情况 [例如高可用性 (HA) 状态更改 ]的消息
+        /// <summary>
+        /// 摘要:关于可能影响设备功能的情况 [例如高可用性 (HA) 状态更改 ]的消息
+        /// </summary>
         Trace = 16,
 
-        //
-        // 摘要:
-        // 非关键性问题。
+        /// <summary>
+        /// 摘要:非关键性问题。
+        /// </summary>
         Warning = 32,
 
-        //
-        // 摘要:
-        // 可恢复的错误。
+        /// <summary>
+        /// 摘要:可恢复的错误。
+        /// </summary>
         Error = 64,
 
-        //
-        // 摘要:
-        //     错误或应用程序崩溃
+        /// <summary>
+        /// 摘要:错误或应用程序崩溃
+        /// </summary>
         Critical = 128
     }
 }
