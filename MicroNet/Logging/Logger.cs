@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -59,7 +59,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Debug))
             {
-                WriteFile(LogLevel.Debug, category, string.Join(",", args), memberName, sourceFilePath, sourceLineNumber);
+                WriteFile(LogLevel.Debug, category, string.Join(",", args ?? new object[] { "" }), memberName, sourceFilePath, sourceLineNumber);
             }
         }
 
@@ -79,7 +79,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Debug))
             {
-                string info = string.Format("{0},\r\n {1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n {1}", eventId.ToString(), string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Debug, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -102,7 +102,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Debug))
             {
-                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Debug, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -121,7 +121,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Information))
             {
-                WriteFile(logLevel: LogLevel.Information, category: category, content: string.Join(",", args), memberName: memberName, sourceFilePath: sourceFilePath, sourceLineNumber: sourceLineNumber);
+                WriteFile(logLevel: LogLevel.Information, category: category, content: string.Join(",", args ?? new object[] { "" }), memberName: memberName, sourceFilePath: sourceFilePath, sourceLineNumber: sourceLineNumber);
             }
         }
 
@@ -141,7 +141,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Information))
             {
-                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Information, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -164,7 +164,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Information))
             {
-                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Information, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -183,7 +183,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.SQL))
             {
-                WriteFile(LogLevel.SQL, category, string.Join(",", args), memberName, sourceFilePath, sourceLineNumber);
+                WriteFile(LogLevel.SQL, category, string.Join(",", args ?? new object[] { "" }), memberName, sourceFilePath, sourceLineNumber);
             }
         }
 
@@ -203,7 +203,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.SQL))
             {
-                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.SQL, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -226,7 +226,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.SQL))
             {
-                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.SQL, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -245,7 +245,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Trace))
             {
-                WriteFile(LogLevel.Trace, category, string.Join(",", args), memberName, sourceFilePath, sourceLineNumber);
+                WriteFile(LogLevel.Trace, category, string.Join(",", args ?? new object[] { "" }), memberName, sourceFilePath, sourceLineNumber);
             }
         }
 
@@ -265,7 +265,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Trace))
             {
-                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Trace, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -288,7 +288,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Trace))
             {
-                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Trace, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -307,7 +307,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Warning))
             {
-                WriteFile(LogLevel.Warning, category, string.Join(",", args), memberName, sourceFilePath, sourceLineNumber);
+                WriteFile(LogLevel.Warning, category, string.Join(",", args ?? new object[] { "" }), memberName, sourceFilePath, sourceLineNumber);
             }
         }
 
@@ -327,7 +327,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Warning))
             {
-                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Warning, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -350,7 +350,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Warning))
             {
-                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0} ,\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Warning, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -369,7 +369,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Error))
             {
-                WriteFile(LogLevel.Error, category, string.Join(",", args), memberName, sourceFilePath, sourceLineNumber);
+                WriteFile(LogLevel.Error, category, string.Join(",", args ?? new object[] { "" }), memberName, sourceFilePath, sourceLineNumber);
             }
         }
 
@@ -389,7 +389,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Error))
             {
-                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Error, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -412,7 +412,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Error))
             {
-                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Error, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -431,7 +431,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Critical))
             {
-                WriteFile(LogLevel.Critical, category, string.Join(",", args), memberName, sourceFilePath, sourceLineNumber);
+                WriteFile(LogLevel.Critical, category, string.Join(",", args ?? new object[] { "" }), memberName, sourceFilePath, sourceLineNumber);
             }
         }
 
@@ -451,7 +451,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Critical))
             {
-                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args));
+                string info = string.Format("{0},\r\n 其他:{1}", eventId.ToString(), string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Critical, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
@@ -474,7 +474,7 @@ namespace MicroNet.Logging
         {
             if (IsEnabled(LogLevel.Critical))
             {
-                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args));
+                string info = string.Format("{0},\r\n 异常:{1},\r\n 其他:{2}", eventId.ToString(), exception, string.Join(",", args ?? new object[] { "" }));
                 WriteFile(LogLevel.Critical, category, info, memberName, sourceFilePath, sourceLineNumber);
             }
         }
